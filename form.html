@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewpoint" content="width-device-width, initial-scale-1.0">
+        <title>The Changers</title>
+            <link rel="stylesheet" href="form.css">
+            <link rel=icon href="LOGO.PNG" sizes="16x16" type="">
+
+    </head>
+    <body>
+        <div class="container">
+           <form onsubmit=" sendEmail(); reset(); return false;">
+               <h3>GET IN TOUCH</h3>
+              <input type="text" id="name" placeholder="Your name" required>
+              <input type="email" id="email" placeholder="Email id " required>
+              <input type="number" id="phone" placeholder="Phone no" required>
+              <textarea id="message" rows="4" placeholder="How can we help you?"></textarea>
+              <button type="submit">Send</button>
+           </form> 
+        </div>
+    </body>
+   
+    <script src="https://smtpjs.com/v3/smtp.js">
+    </script>
+    <script>
+        function sendEmail() {
+            Email.send({
+    Host : "smtp.gmail.com",
+    Username : "londolozasihawi@gmail.com",
+    Password : "Cbongumusa96",
+    To : 'londoleza.sihawu@younglings.africa',
+    From : document.getElementById("email").value,
+    Subject : "Contact form enquiry",
+    Body : "name: " + document.getElementById("name").value
+     + "<br> Email" + document.getElementById("email") 
+}).then(
+  message => alert(message)
+);
+        }
+    </script>
+</html>
+    
+        
+
